@@ -1,3 +1,4 @@
+// Import `connection.js` into `orm.js`
 var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
@@ -21,6 +22,8 @@ function objToSql(ob) {
 
   return arr.toString();
 }
+
+// create the methods that will execute the necessary MySQL commands in the controllers
 
 var orm = {
   selectAll: function(tableInput, cb) {
@@ -82,4 +85,5 @@ var orm = {
   }
 };
 
+// Export the ORM object in `module.exports`
 module.exports = orm;
